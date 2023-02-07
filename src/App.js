@@ -1,35 +1,21 @@
-import Directory from "./components/directory/directory.component";
-
-const categories = [
-  {
-    id: 1,
-    title: "kits",
-    imageUrl: "https://i.ibb.co/RhbbyjR/kit.jpg",
-  },
-  {
-    id: 2,
-    title: "football",
-    imageUrl: "https://i.ibb.co/tmSqZQf/footbal-scene-21730-11060.jpg",
-  },
-  {
-    id: 3,
-    title: "shoes",
-    imageUrl: "https://i.ibb.co/f1vj4m8/shoes.jpg",
-  },
-  {
-    id: 4,
-    title: "training",
-    imageUrl: "https://i.ibb.co/g9WRhDD/training.jpg",
-  },
-  {
-    id: 5,
-    title: "accessories",
-    imageUrl: "https://i.ibb.co/CvXX4Bs/accessories.jpg",
-  },
-];
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/sign-in/sign-in.component";
+const Shop = () => {
+  return <h1>I am shop page</h1>;
+};
 
 const App = () => {
-  return <Directory categories={categories} />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="signin" element={<SignIn />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
