@@ -1,3 +1,9 @@
+.shop-container {
+  h2 {
+    margin: 5px 10px;
+  }
+}
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

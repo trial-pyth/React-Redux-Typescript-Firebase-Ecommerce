@@ -12,7 +12,7 @@
     height: 95%;
     object-fit: cover;
     margin-bottom: 5px;
-    // border: 4px solid royalblue;
+    border: 4px solid royalblue;
     // -webkit-box-shadow: 4px 28px 300px -39px rgba(0, 0, 0, 0.44);
     // -moz-box-shadow: 4px 28px 300px -39px rgba(0, 0, 0, 0.44);
     // box-shadow: 4px 28px 300px -39px rgba(0, 0, 0, 0.44);
@@ -43,8 +43,9 @@
     width: 100%;
     height: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 18px;
+    font-weight: 600;
 
     .name {
       width: 90%;
