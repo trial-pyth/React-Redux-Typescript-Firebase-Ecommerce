@@ -19,8 +19,9 @@
   .cart-items {
     height: 80%;
     display: flex;
+    font-weight: normal;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
   }
 
   button {
