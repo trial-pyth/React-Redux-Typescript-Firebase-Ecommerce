@@ -1,12 +1,15 @@
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
 import {
   createUserDocumentFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
-
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from "../../store/user/user.action";
 import "./sign-in-form.styles.scss";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
@@ -19,11 +22,13 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
 
+  const dispatch = useDispatch();
+
   const { email, password } = formFields;
 
   //   console.log(formFields);
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup();
+    dispatch(googleSignInStart());
   };
 
   const resetFormFields = () => {
@@ -34,13 +39,11 @@ const SignInForm = () => {
     e.preventDefault();
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
+      dispatch(emailSignInStart(email, password));
+
       // console.log(response);
       resetFormFields();
-      //   console.log(response);
+      // console.log(response);
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":

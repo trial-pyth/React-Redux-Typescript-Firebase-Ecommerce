@@ -1,19 +1,23 @@
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 
 import CartIcon from "../../components/cart-icon/cart-icon.component";
-import { UserContext } from "../../context/user.context";
-import { CartContext } from "../../context/cart.context";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
 import { Outlet, Link } from "react-router-dom";
-
+import { selectCurrentUser } from "../../store/user/user.selector";
 import SportLogo from "../../assets/original-7ae73f33662c5f64b8f0ed10e06dfcda-removebg-preview.png";
 import "./navigation.styles.scss";
-import { signOutUser } from "../../utils/firebase/firebase.utils";
+
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
+import { useSelector, useDispatch } from "react-redux";
+import { signOutStart } from "../../store/user/user.action";
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
-  const { isCartOpen } = useContext(CartContext);
+  const currentUser = useSelector(selectCurrentUser);
+  const isCartOpen = useSelector(selectIsCartOpen);
+  const dispatch = useDispatch();
+
+  const signOutUser = () => dispatch(signOutStart());
   return (
     <Fragment>
       <div className="navigation">
