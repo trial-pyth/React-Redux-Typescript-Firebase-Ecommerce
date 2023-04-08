@@ -10,6 +10,12 @@
 
 ## Add your favourite items to cart
 
+All items are managed using Redux
+
+<img src="https://github.com/trial-pyth/React-Redux-Typescript-Firebase-Ecommerce/blob/main/gif/checkout.gif?raw=true" alt="play" width=500 /><sub><sup>⌛ Please wait until GIF loads</sup></sub>
+
+## Edit your cart
+
 <img src="https://github.com/trial-pyth/React-Typescript-Firebase-Ecommerce/blob/main/gif/add_to_cart.gif?raw=true" alt="play" width=500 /><sub><sup>⌛ Please wait until GIF loads</sup></sub>
 
 ## Sign In to checkout
