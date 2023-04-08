@@ -18,5 +18,7 @@
 
 ## Payment using stripe gateway
 
+Stripe gateway hosted using Netlify server
+
 <img src="https://github.com/trial-pyth/React-Typescript-Firebase-Ecommerce/blob/main/gif/payment.gif?raw=true" alt="play" width=500 /><sub><sup>⌛ Please wait until GIF loads</sup></sub>
 
